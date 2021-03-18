@@ -1,0 +1,17 @@
+@mixin box($margin: 0px, $padding:0px){
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin dimension($height: none, $width: none) {
+    height: $height;
+    width: $width;
+}
+
+@mixin position($top:0, $right:0, $bottom:0, $left:0) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+//Helper

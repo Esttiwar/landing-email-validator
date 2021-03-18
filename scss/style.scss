@@ -1,0 +1,332 @@
+@import "variables";
+@import "mixins";
+@import "query-phone";
+@import "query-tablet";
+@import "query-pc";
+
+* {
+    @include box(0,0);
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-primary;
+    opacity: 0.6;
+    @include box(0, 80px 0 80px 120px);
+    @include dimension(100vh, 100vw);
+}
+
+.container {
+    position: relative;
+    @include dimension(100%, 100%);
+}
+
+.logo {
+    position: absolute;
+    @include position(-2%);
+}
+
+.image-hero {
+    position: absolute;
+    @include position(0,0,0,32%);
+}
+
+.image-hero img {
+    @include dimension(100%, 100%);
+}
+
+.info {   
+    position: absolute;
+    color: white;
+    background-color: $color-primary;
+    @include position(20%,40%);
+    z-index: 1;
+}
+
+.titulo {
+    letter-spacing: 7px;
+    @include box(0, 35px 0 0 0) ;
+    font-family: $font;
+    font-weight: 100;
+    color: white;
+}
+
+.parrafo {
+    @include box(20px 0 0 0, 0 250px 0 0) ;
+    line-height : 25px;
+    font-family: $font;
+    color: white;
+}
+
+.email {
+    @include box(30px 0 0 0, 5px 10px 5px 20px);
+    @include dimension(none, 342px);
+    border-radius: 30px;
+    background-color: $color-input;
+}
+
+input {
+    background-color: $color-input;
+    border: 0;
+    font-weight: bolder;
+    @include box(0 6px 0 0);
+    outline: none;
+    color: $color-white;
+}
+
+::placeholder {
+    color: $color-white;
+    }
+
+button {
+    background-color:  $color-btn;
+    border-radius: 28px;
+    font-family: $font;
+    color: rgb(29, 28, 28);
+    font-size: $fontsize-btn;
+    @include box(0, 10px 20px 10px 20px);
+    font-weight: bolder;
+    border: 2px solid $color-btn;
+    outline: none
+}
+
+button:hover {
+    background-color:  $color-btn-over;
+    border: 2px solid $color-btn-over;
+}
+
+.btn-custom {
+    margin: 10px 0;
+    color: #e0f808;
+    font-family: Arial, Helvetica, sans-serif";
+}
+
+.marcas {
+    @include box(10px 0 0 0); 
+}
+
+.spotify {
+    display: inline-block;
+}
+
+.apple {
+    display: inline-block;
+    @include box(0 0 0 30px);
+    position: relative;
+    @include position(-5px, 0, 0, 10px);
+}
+
+.google {
+    display: inline-block;
+    @include box(0 0 0 50px);
+    position: relative;
+    @include position(-20px);
+}
+
+.pocket {
+    display: inline-block;
+    @include box(0 0 0 40px);
+    position: relative;
+    @include position(-20px);
+}
+
+.decoration {
+    position: absolute;
+    @include position(none, none, -15%, 85%);
+    z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        background-color: $color-primary;
+        opacity: 0.6;
+        @include box(0, 0 0 0 40px);
+        @include dimension(100vh, 100vw);
+    }
+
+    .container {
+        position: relative;
+        @include dimension(100%, 100%);
+    }
+
+    .logo {
+        position: absolute;
+        @include position(10%);
+    }
+
+    .image-hero {   
+        left: 30%;
+        @include position(0, 0, 0, 30%);
+    }
+
+    button:hover {
+        background-color:  $color-btn-over;
+        border: 2px solid $color-btn-over;
+    }
+
+    .info {
+        position: absolute;
+        color: white;
+        background-color: $color-primary;
+        @include position(40%, 18%, 0 , 0);
+        z-index: 1;  
+    }
+
+    .titulo {
+        letter-spacing: 7px;
+        @include box(0, 80px 0 0 0);    
+        font-family: $font;
+        font-weight: 100;
+        color: white;
+    }
+    
+    .parrafo {
+        @include box(20px 0 0 0, 0 270px 0 0);
+        line-height: 25px;
+        font-family: $font;
+        color: white;   
+    }
+    
+    .email {
+        @include box(30px 0 0 0, 5px 10px 5px 20px);
+        width: 342px;
+        border-radius: 30px;
+        background-color: $color-input;
+    }
+    
+    input {
+        background-color: $color-input;
+        border: 0;
+        font-weight: bolder;
+        @include box(0 6px 0 0);
+        outline: none;
+        color: white;
+    }
+
+    .decoration {
+        position: absolute;
+        @include position(130%, 0, 0, 0);
+    }
+    
+}
+
+@media screen and (max-width: 376px) {
+
+    body {
+        @include box(0, 0%);
+    }
+
+    .container {
+        position: relative;
+        @include dimension(100%, 100%);
+    }
+
+    .logo {
+        position: absolute;
+        @include position(10%,0,0,37%);
+        z-index: 2;
+    }
+
+    .image-hero {
+        @include position(0,0,0,0);
+        opacity: 0.2;
+    }
+
+    .info {
+        position: absolute;
+        color: white;
+        @include position(20%,0,0,0);
+        z-index: 1;
+        background-color: transparent;  
+    }
+
+    .titulo {
+        letter-spacing: 7px;
+        @include box(0, 70px 0 0 0);
+        font-family: $font;
+        font-weight: 100;
+        color: white;
+        text-align: center;
+        font-size: $fontsize-phone;
+    }
+    
+    .parrafo {
+        @include box(20px 0 0 0, 0 8px 0 8px);
+        line-height : 20px;
+        font-family: $font;
+        color: white;
+        text-align: center;
+        
+    }
+    
+    .email {
+        @include box(30px 0 0 0, 5px 10px 5px 20px); 
+        @include dimension(40%,342px);   
+        border-radius: 0px;
+        position: absolute;
+        @include position(88%,5%,-8%,none);
+        z-index: 1; 
+        background-color: transparent;
+    }
+    
+    input {
+        background-color: $color-input;
+        border: 0;
+        font-weight: bolder;
+        outline: none;
+        color: white;
+        @include box(0 10px 30px 0, 15px 145px 15px 5px);
+        border-radius: 30px;
+        
+    }
+    
+    ::placeholder {
+        color: #cae6db;
+        text-align: center;
+        @include box(50px 20px 20px 20px);
+        }
+    
+    button {
+        background-color: $color-white;
+        border-radius: 28px;
+        font-family: $font;
+        color: rgb(29, 28, 28);
+        font-size: $fontsize-btn;
+        font-weight: bolder;
+        border: 2px solid $color-white;
+        outline: none;
+        @include box(-8px 0px 0px 0px, 12px 123px 12px 70px);
+    }
+
+    .marcas {
+        position: absolute;
+        @include box(-10% 0 0 0);
+        @include position(70%,0,0,0);
+        z-index: 1;
+    }
+
+    .spotify{ 
+        @include box(0 0 0 45px);
+    }
+
+    .apple {
+        @include box(0 0 0 48px);
+    }
+
+    .google {
+        @include box(30px 0 0 50px);
+    }
+
+    .pocket {
+        @include box(8px 0 0 0);
+    }
+
+    .decoration {
+        display: none;
+    }
+
+    
+}
+
+
